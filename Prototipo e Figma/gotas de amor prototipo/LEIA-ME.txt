@@ -1,0 +1,34 @@
+GOTAS DE AMOR - PROJETO DE JAVASCRIPT BÁSICO
+
+COMO ABRIR
+1. Extraia todos os arquivos do ZIP.
+2. Entre na pasta gotas-de-amor.
+3. Abra index.html no navegador.
+Não é necessário instalar nada. Também pode usar o Live Server no VS Code.
+
+ARQUIVOS
+index.html: conteúdo, produtos, formulários e botões.
+style.css: cores, espaçamento e organização da página.
+script.js: comportamento do site, com comentários e nomes em português.
+imagens/logo.jpg: identidade visual fornecida para o projeto.
+GUIA-DO-PROJETO.txt: explicação para estudar e apresentar.
+
+O QUE FUNCIONA
+- Busca de produtos pelo nome.
+- Seleção de camiseta, caneca ou moletom.
+- Personalização com frase, cor e tamanho.
+- Prévia da frase e confirmação da personalização.
+- Quantidade, adição e remoção de produtos no carrinho.
+- Cálculo do total e validação de entradas.
+- Finalização de pedido demonstrativo.
+
+LIMITES DESTA VERSÃO
+Não possui banco de dados, login, upload de imagem, pagamento real,
+frete calculado ou acompanhamento de produção. A retirada é apenas ilustrativa.
+Atualizar ou fechar a página apaga o carrinho e reinicia a numeração de pedidos.
+A prévia usa ícones e texto; não simula a impressão em uma peça real.
+Os preços são exemplos. As imagens dos ícones dependem do sistema utilizado.
+
+Esta versão foi reduzida para estudo e apresentação em uma disciplina básica.
+Leia o código, faça alterações próprias e siga as regras do professor sobre
+uso e declaração de ferramentas de apoio.

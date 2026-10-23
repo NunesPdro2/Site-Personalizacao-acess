@@ -1,0 +1,137 @@
+/* Estilo geral da página */
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fff8fa;
+    color: #333333;
+    line-height: 1.6;
+}
+header, footer {
+    padding: 25px;
+    text-align: center;
+    background-color: #f7dce5;
+}
+header img {
+    width: 110px;
+    border-radius: 50%;
+}
+h1, h2 {
+    color: #963758;
+}
+nav a {
+    display: inline-block;
+    margin: 5px 12px;
+    color: #743049;
+}
+main {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
+section {
+    margin-bottom: 25px;
+    padding: 25px;
+    border: 1px solid #e5c7d0;
+    border-radius: 10px;
+    background-color: white;
+}
+.aviso, small {
+    color: #666666;
+}
+/* Flexbox organiza os cartões e permite quebrar a linha. */
+.lista-produtos, .personalizacao {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.produto, .personalizacao form, .previa {
+    flex: 1;
+    min-width: 220px;
+}
+.produto, .previa {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff0f5;
+    text-align: center;
+}
+.icone {
+    display: block;
+    font-size: 65px;
+}
+.produto button {
+    display: block;
+    margin: 15px auto 0;
+}
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+input, select, button {
+    padding: 10px;
+    font: inherit;
+    border-radius: 5px;
+}
+input, select {
+    width: 100%;
+    border: 1px solid #aaaaaa;
+}
+button {
+    margin-top: 15px;
+    border: none;
+    background-color: #a33f66;
+    color: white;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #7d2d4d;
+}
+button:focus-visible, a:focus-visible, input:focus, select:focus {
+    outline: 3px solid #256380;
+    outline-offset: 2px;
+}
+.confirmacao input {
+    width: auto;
+}
+.previa {
+    align-self: flex-start;
+}
+#frase-previa {
+    font-size: 24px;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+#lista-carrinho {
+    padding: 0;
+    list-style: none;
+}
+#lista-carrinho li {
+    padding: 12px 0;
+    border-bottom: 1px solid #dddddd;
+    overflow-wrap: anywhere;
+}
+#lista-carrinho button {
+    margin: 5px 10px;
+}
+#total {
+    font-size: 22px;
+    font-weight: bold;
+}
+#pedido-finalizado {
+    color: #256380;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+/* Em celulares pequenos, cada produto ocupa uma linha. */
+@media (max-width: 600px) {
+    main, section {
+        padding: 15px;
+    }
+    .produto, .personalizacao form, .previa {
+        flex-basis: 100%;
+        min-width: 0;
+    }
+}

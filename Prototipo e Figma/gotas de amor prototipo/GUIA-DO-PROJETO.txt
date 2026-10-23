@@ -1,0 +1,104 @@
+PROPOSTA: LOJA DE PERSONALIZADOS GOTAS DE AMOR
+
+1. OBJETIVO
+Criar um protótipo de loja que permita escolher produtos, escrever uma frase
+personalizada e montar um pedido. O foco é praticar JavaScript básico.
+
+2. RELAÇÃO COM O MAPA DE FUNCIONALIDADES FORNECIDO
+Buscar: campo de busca e catálogo.
+Montar pedido: escolher produto e quantidade e adicionar ao carrinho.
+Personalizar: digitar frase, escolher cor e tamanho e aprovar a prévia.
+Cadastrar: informar um nome para a simulação, sem criar uma conta.
+Conferir: revisar itens, remover itens e visualizar o total.
+Pagar: escolher Pix ou cartão, sem cobrança ou integração financeira.
+Acompanhar: nesta versão, apenas uma confirmação de recebimento do pedido.
+
+Ajuste de imagem, endereço, cupom, frete e etapas de produção ficam como
+melhorias futuras. O mapa completo é a proposta maior; esta entrega é um
+recorte didático. Caso o professor exija todos os itens do MVP, este recorte
+precisará ser ampliado.
+
+3. CONCEITOS DE JAVASCRIPT UTILIZADOS
+let: declara variáveis, como carrinho e numeroPedido.
+Array: armazena uma lista, como produtos e carrinho.
+Objeto: agrupa dados de um produto ou item de pedido.
+function: separa cada tarefa em um bloco de código reutilizável.
+if / else: decide o que fazer conforme uma condição.
+for: percorre os produtos ou os itens do carrinho.
+Number: converte o valor de um campo, que chega como texto, para número.
+Number.isInteger: verifica se a quantidade é inteira.
+push: acrescenta um item ao array.
+splice: remove um item do array.
+getElementById: encontra um elemento pelo id definido no HTML.
+textContent: lê ou altera texto sem interpretar o conteúdo como HTML.
+createElement / appendChild: cria e insere elementos na página.
+onclick / oninput / onchange / onsubmit: executam funções em resposta ao usuário.
+
+O HTML usa eventos diretamente nos elementos para deixar visível qual botão
+chama qual função. É uma escolha didática; em projetos maiores os eventos
+podem ser organizados no arquivo JavaScript com addEventListener.
+
+4. COMO AS FUNÇÕES SE CONECTAM
+buscarProdutos: lê a busca e percorre os cartões usando for e if.
+escolherProduto: muda o select para o produto clicado e chama atualizarPrevia.
+atualizarPrevia: lê a frase e a cor e altera a prévia; desmarca a aprovação.
+adicionarAoCarrinho: valida os campos, cria um objeto e usa push.
+calcularTotal: soma preço vezes quantidade de cada item usando for.
+mostrarCarrinho: cria uma linha para cada item e exibe o total calculado.
+removerItem: usa splice e chama mostrarCarrinho novamente.
+finalizarPedido: verifica o carrinho e o nome, mostra uma confirmação e limpa os itens.
+formatarPreco: formata o preço com duas casas e vírgula decimal.
+
+5. DETALHES IMPORTANTES PARA ENTENDER
+Os índices do array começam em zero. Por isso, camiseta é 0, caneca é 1 e
+moletom é 2. Os valores do select correspondem a esses índices.
+
+Os campos usam required, min, max e maxlength do HTML. O JavaScript também
+confere frase vazia, quantidade inteira, aprovação, carrinho vazio e nome.
+Isso mostra que algumas validações são nativas do HTML e outras estão no JS.
+
+Os formulários usam return false depois da função para impedir que o navegador
+recarregue a página ao enviar. Os dados continuam somente na memória.
+
+O preço individual vem do array produtos; a linha do carrinho guarda uma cópia
+da frase, cor e tamanho. Alterar a próxima criação não muda as anteriores.
+
+O botão Remover recebe uma função anônima. Ela será executada quando o usuário
+clicar. O let i do laço permite que cada botão use a posição do seu item.
+Depois de uma remoção, a lista é refeita com as posições atualizadas.
+
+Os preços também aparecem no HTML para manter o catálogo simples. Se mudar
+um preço, atualize os textos do HTML e o array no JavaScript. Evitar essa
+repetição, gerando todo o catálogo em JS, é uma melhoria futura.
+
+6. ROTEIRO SUGERIDO DE DEMONSTRAÇÃO
+1. Apresente o objetivo e mostre os três arquivos principais.
+2. Busque caneca para mostrar o filtro.
+3. Apague a busca e escolha uma camiseta.
+4. Digite uma frase, altere a cor e observe a prévia.
+5. Escolha tamanho M e quantidade 2. Aprove e adicione ao carrinho.
+6. Mostre o total de R$ 119,80: 2 multiplicado por R$ 59,90.
+7. Adicione uma caneca: o total passa a R$ 159,70.
+8. Remova a camiseta: o total passa a R$ 39,90.
+9. Informe um nome de exemplo e finalize com Pix simulado.
+10. Explique que não há cobrança real e que atualizar a página apaga os dados.
+
+7. PERGUNTAS PARA PRATICAR ANTES DA APRESENTAÇÃO
+- Qual a diferença entre um array e um objeto neste projeto?
+- Por que converter quantidade com Number?
+- Onde está o cálculo do total?
+- O que push e splice fazem?
+- Por que mostrarCarrinho é chamada depois de adicionar ou remover?
+- Qual a diferença entre o HTML, o CSS e o JavaScript?
+- Por que o projeto não é uma loja pronta para vendas reais?
+
+8. EXERCÍCIOS PARA PERSONALIZAR SUA ENTREGA
+- Troque uma cor no CSS e explique a regra alterada.
+- Altere o preço de um produto no HTML e no array.
+- Acrescente uma quarta cor ao select.
+- Crie uma mensagem diferente para carrinho vazio.
+- Se tiver aprendido o assunto, adicione um contador de unidades no carrinho.
+
+Não é necessário decorar o código. O importante é conseguir explicar e
+alterar cada parte. O projeto contém apoio gerado por IA; siga a orientação
+da disciplina sobre como declarar esse apoio na entrega.

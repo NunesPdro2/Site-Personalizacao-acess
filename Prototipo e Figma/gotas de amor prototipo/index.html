@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gotas de Amor - Personalizados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="imagens/logo.jpg" alt="Logo Gotas de Amor">
+        <h1>Gotas de Amor</h1>
+        <p>Camisetas, canecas e roupas com a sua personalidade.</p>
+        <nav>
+            <a href="#produtos">Produtos</a>
+            <a href="#personalizar">Personalizar</a>
+            <a href="#carrinho">Carrinho</a>
+        </nav>
+    </header>
+
+    <main>
+        <p class="aviso">Projeto acadêmico de JavaScript básico. Valores ilustrativos e compra simulada.</p>
+
+        <!-- Os produtos são escritos no HTML para facilitar o entendimento. -->
+        <section id="produtos">
+            <h2>1. Escolha um produto</h2>
+            <label for="busca">Buscar pelo nome</label>
+            <input id="busca" type="search" placeholder="Digite camiseta, caneca ou moletom" oninput="buscarProdutos()">
+            <p id="resultado-busca" aria-live="polite"></p>
+
+            <div class="lista-produtos">
+                <article class="produto" data-nome="camiseta">
+                    <span class="icone" aria-hidden="true">👕</span>
+                    <h3>Camiseta</h3>
+                    <p>Estampa com frase personalizada.</p>
+                    <strong>R$ 59,90</strong>
+                    <button type="button" onclick="escolherProduto(0)">Personalizar camiseta</button>
+                </article>
+                <article class="produto" data-nome="caneca">
+                    <span class="icone" aria-hidden="true">☕</span>
+                    <h3>Caneca</h3>
+                    <p>Uma mensagem para presentear.</p>
+                    <strong>R$ 39,90</strong>
+                    <button type="button" onclick="escolherProduto(1)">Personalizar caneca</button>
+                </article>
+                <article class="produto" data-nome="moletom">
+                    <span class="icone" aria-hidden="true">🧥</span>
+                    <h3>Moletom</h3>
+                    <p>Roupa com uma frase especial.</p>
+                    <strong>R$ 119,90</strong>
+                    <button type="button" onclick="escolherProduto(2)">Personalizar moletom</button>
+                </article>
+            </div>
+        </section>
+
+        <section id="personalizar">
+            <h2>2. Personalize do seu jeito</h2>
+            <div class="personalizacao">
+                <form onsubmit="adicionarAoCarrinho(); return false;">
+                    <label for="produto-escolhido">Produto</label>
+                    <select id="produto-escolhido" onchange="atualizarPrevia()">
+                        <option value="0">Camiseta - R$ 59,90</option>
+                        <option value="1">Caneca - R$ 39,90</option>
+                        <option value="2">Moletom - R$ 119,90</option>
+                    </select>
+
+                    <label for="frase">Frase da estampa</label>
+                    <input id="frase" maxlength="35" placeholder="Ex.: Feito com amor" oninput="atualizarPrevia()" required>
+
+                    <label for="cor">Cor da frase</label>
+                    <select id="cor" onchange="atualizarPrevia()">
+                        <option value="#a33f66">Rosa</option>
+                        <option value="#256380">Azul</option>
+                        <option value="#222222">Preto</option>
+                    </select>
+
+                    <label for="tamanho">Tamanho da roupa</label>
+                    <select id="tamanho">
+                        <option>P</option>
+                        <option>M</option>
+                        <option>G</option>
+                        <option>GG</option>
+                    </select>
+                    <small>Para canecas, o tamanho é único.</small>
+
+                    <label for="quantidade">Quantidade (1 a 20)</label>
+                    <input id="quantidade" type="number" value="1" min="1" max="20" step="1" required>
+
+                    <label class="confirmacao">
+                        <input id="aprovacao" type="checkbox" required>
+                        Conferi e aprovo esta personalização.
+                    </label>
+                    <button type="submit">Adicionar ao carrinho</button>
+                    <p id="mensagem-carrinho" role="status"></p>
+                </form>
+
+                <div class="previa">
+                    <h3>Prévia da sua ideia</h3>
+                    <span id="icone-previa" class="icone" aria-hidden="true">👕</span>
+                    <p id="nome-previa">Camiseta</p>
+                    <p id="frase-previa">Sua frase aparece aqui</p>
+                    <small>Representação ilustrativa da estampa.</small>
+                </div>
+            </div>
+        </section>
+
+        <section id="carrinho">
+            <h2>3. Confira seu carrinho</h2>
+            <ul id="lista-carrinho"></ul>
+            <p id="total">Total: R$ 0,00</p>
+        </section>
+
+        <section>
+            <h2>4. Finalize o pedido de demonstração</h2>
+            <form onsubmit="finalizarPedido(); return false;">
+                <label for="nome-cliente">Nome para o pedido</label>
+                <input id="nome-cliente" maxlength="60" placeholder="Use um nome de exemplo" required>
+
+                <label for="pagamento">Forma de pagamento simulada</label>
+                <select id="pagamento">
+                    <option>Pix</option>
+                    <option>Cartão</option>
+                </select>
+                <p>Retirada na loja, sem frete nesta demonstração. Nenhum pagamento será realizado.</p>
+                <button type="submit">Finalizar pedido simulado</button>
+            </form>
+            <p id="pedido-finalizado" role="status"></p>
+        </section>
+    </main>
+
+    <footer>Gotas de Amor | Projeto de estudo em HTML, CSS e JavaScript.</footer>
+    <!-- O JavaScript fica no final para acessar os elementos já criados. -->
+    <script src="script.js"></script>
+</body>
+</html>
