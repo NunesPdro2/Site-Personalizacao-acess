@@ -1,0 +1,13 @@
+GOTAS DE AMOR - SITE COMPLETO
+
+1. Extraia todo o ZIP.
+2. Abra a pasta gotas-de-amor.
+3. Dê dois cliques em index.html para visualizar o site.
+
+Para editar, abra a pasta no Visual Studio Code.
+Arquivos: index.html (estrutura), styles.css (visual), app.js (JavaScript).
+Mantenha a pasta assets junto dos arquivos.
+
+Para o ambiente de desenvolvimento, recomenda-se usar um servidor local, como a extensão Live Server do VS Code.
+
+Esta é uma demonstração: pagamentos, preços, frete e pedidos são simulados.
