@@ -1,0 +1,16 @@
+{
+  "name": "gotas-de-amor",
+  "version": "1.0.0",
+  "description": "Loja Gotas de Amor Personalizados",
+  "license": "ISC",
+  "scripts": {
+    "start": "node scripts/iniciar.mjs",
+    "site": "node scripts/iniciar.mjs preview",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "verificar": "node scripts/verificar.mjs"
+  },
+  "engines": { "node": "^20.19.0 || >=22.12.0" },
+  "devDependencies": { "vite": "^8.3.8" }
+}
